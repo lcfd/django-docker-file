@@ -1,0 +1,19 @@
+{
+  auto_https off
+}
+
+:8001 {
+  handle_path /static/* {
+    root * /project/static
+    file_server
+  }
+
+  handle_path /media/* {
+    root * /project/media
+    file_server
+  }
+
+  handle {
+    reverse_proxy 127.0.0.1:8000
+  }
+}
