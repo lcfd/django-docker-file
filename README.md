@@ -46,6 +46,7 @@ APP_NAME=yourname
 ALLOWED_HOSTS=*
 CSRF_TRUSTED_ORIGINS=https://*.mydomain.com
 CORS_ALLOWED_ORIGINS=https://...
+# CSRF_COOKIE_DOMAIN=.yourdomain.xyz
 DATABASE_URL=postgres://asdfasdf:asdfasdf:5432/postgres
 SECRET_KEY=asdfasdfasdfasdfasdfasdf
 
@@ -101,6 +102,7 @@ env = environ.Env(
     STATIC_ROOT=(str, BASE_DIR / "static"),
     SESSION_COOKIE_SECURE=(bool, False),
     CSRF_COOKIE_SECURE=(bool, False),
+    CSRF_COOKIE_DOMAIN=(str, None),
     SECURE_SSL_REDIRECT=(bool, False),
     EMAIL_HOST=(str, "localhost"),
     EMAIL_PORT=(int, 25),
@@ -143,6 +145,8 @@ STATIC_ROOT = env("STATIC_ROOT")
 
 SESSION_COOKIE_SECURE = env("SESSION_COOKIE_SECURE")
 CSRF_COOKIE_SECURE = env("CSRF_COOKIE_SECURE")
+# I used it for subdomains on the same domain
+CSRF_COOKIE_DOMAIN = env("CSRF_COOKIE_DOMAIN")
 
 SECURE_SSL_REDIRECT = env("SECURE_SSL_REDIRECT")
 
