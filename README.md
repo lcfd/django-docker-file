@@ -173,15 +173,16 @@ Set `Ports Exposes` with the port number used by Caddy.
 
 ### Volumes
 
-- Go to `Storages`
-- `+ Add` to create new volumes
-  - Add one volume for `static` with `Destination Path` set to `/project/static`
-  - Add one volume for `media` with `Destination Path` set to `/project/media`
+If you are storing uploaded files ([media files](https://docs.djangoproject.com/en/5.1/topics/files/)) on the filesystem you need a Docker volume.
+
+1. Go to `Storages`
+2. `+ Add` to create new volumes
+3. Add one volume for `media` with `Destination Path` set to `/project/media`
 
 ### Env variables
 
-- Go to the `Environment Variables` tab of your service configuration
-- Set the variables seen above
+1. Go to the `Environment Variables` tab of your service configuration
+2. Set the variables seen above
 
 ### Database
 
