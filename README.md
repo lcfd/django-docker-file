@@ -203,4 +203,5 @@ If your Django project leves in a subfolder of the repository:
 
 #### Useful commands for automated tasks
 
-`python manage.py createsuperuser --noinput`
+- `python manage.py createsuperuser --noinput`
+- `python manage.py collectstatic --noinput`
